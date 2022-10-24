@@ -30,7 +30,11 @@ calcBtn.forEach((btn) => {
         break;
       case "back":
         if (buffer !== "0") {
-          buffer = buffer.slice(0, buffer.length - 1);
+          if (buffer == "") {
+            buffer = "0";
+          } else {
+            buffer = buffer.slice(0, buffer.length - 1);
+          }
         }
         break;
       default:
@@ -45,13 +49,13 @@ function handleMath(value) {
   let intValue = parseInt(value);
   if (isNaN(intValue)) {
     prevOperation++;
-    if(prevOperation === 1) {
+    if (prevOperation === 1) {
       buffer += value;
     }
-  }else {
-    if(buffer === "0") {
+  } else {
+    if (buffer === "0") {
       buffer = value;
-    }else {
+    } else {
       buffer += value;
     }
     prevOperation = 0;
