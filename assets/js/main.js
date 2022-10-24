@@ -30,7 +30,7 @@ calcBtn.forEach((btn) => {
         break;
       case "back":
         if (buffer !== "0") {
-          buffer = buffer.slice(0, buffer.length - 2);
+          buffer = buffer.slice(0, buffer.length - 1);
         }
         break;
       default:
