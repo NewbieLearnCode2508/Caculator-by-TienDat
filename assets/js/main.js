@@ -29,12 +29,9 @@ calcBtn.forEach((btn) => {
         buffer = `${runningTotal}`;
         break;
       case "back":
-        if (buffer !== "0") {
-          if (buffer == "") {
-            buffer = "0";
-          } else {
-            buffer = buffer.slice(0, buffer.length - 1);
-          }
+        buffer = buffer.slice(0, buffer.length - 1);
+        if (buffer === "") {
+          buffer = "0";
         }
         break;
       default:
