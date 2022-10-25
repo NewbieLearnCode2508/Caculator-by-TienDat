@@ -27,6 +27,7 @@ calcBtn.forEach((btn) => {
       case "=":
         runningTotal = eval(buffer);
         buffer = `${runningTotal}`;
+        prevOperation = 99;
         break;
       case "back":
         buffer = buffer.slice(0, buffer.length - 1);
@@ -50,7 +51,7 @@ function handleMath(value) {
       buffer += value;
     }
   } else {
-    if (buffer === "0") {
+    if (buffer === "0" || prevOperation === 99) {
       buffer = value;
     } else {
       buffer += value;
